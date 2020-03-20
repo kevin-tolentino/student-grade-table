@@ -9,4 +9,16 @@ class App{
     this.handleGetGradesError = this.handleGetGradesError.bind(this)
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
   }
+  getGrades(){
+    $.ajax({
+      method: "GET",
+      url: "https://sgt.lfzprototypes.com/api/grades",
+      headers: { "X-Access-Token": "ce198Okb"},
+      success: this.handleGetGradesSuccess,
+      error: this.handleGetGradesError
+    })
+  }
+  start(){
+    this.getGrades()
+  }
 }
