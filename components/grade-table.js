@@ -5,7 +5,8 @@ class GradeTable{
   }
   updateGrades(grades){
     // updateGrades takes one parameter, grades and logs it to the console for the time being.
-    this.tableElement.querySelector("tbody").innerHTML = "";
+    var tBody = this.tableElement.querySelector("tbody");
+    tBody.innerHTML = "";
     for (var arrayCounter = 0; arrayCounter < grades.length; arrayCounter++) {
       var tableData1 = document.createElement("td")
       tableData1.textContent = grades[arrayCounter].name
@@ -19,7 +20,5 @@ class GradeTable{
       tableRow.appendChild(tableData3)
       tBody.appendChild(tableRow)
     }
-    var data1 = document.createElement("td")
-    data1.textContent =
   }
 }
