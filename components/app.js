@@ -16,6 +16,9 @@ class App{
   constructor(gradeTable, pageHeader, gradeForm) {
     this.handleGetGradesError = this.handleGetGradesError.bind(this)
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
+    this.createGrade = this.createGrade.bind(this)
+    this.handleCreateGradesError = this.handleCreateGradesError.bind(this)
+    this.handleCreateGradesSucess = this.handleCreateGradesSucess.bind(this)
     this.gradeTable = gradeTable
     this.pageHeader = pageHeader;
     this.gradeForm = gradeForm
@@ -30,6 +33,16 @@ class App{
     })
   }
   start(){
+    this.getGrades()
+    this.gradeForm.onSubmit(this.createGrade)
+  }
+  createGrade(name, course, grade){
+    console.log("name, course, grade: ", name, course, grade)
+  }
+  handleCreateGradesError(error){
+    console.error(error)
+  }
+  handleCreateGradesSucess(){
     this.getGrades()
   }
 }
