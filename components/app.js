@@ -4,6 +4,14 @@ class App{
   }
   handleGetGradesSuccess(grades){
     this.gradeTable.updateGrades(grades)
+    var gradeAverage = 0;
+    for(var gradeAverageCounter = 0; gradeAverageCounter < grades.length; gradeAverageCounter++){
+      gradeAverage = gradeAverage + grades[gradeAverageCounter].grade
+      if (gradeAverageCounter === grades.length - 1){
+        gradeAverage = gradeAverage/grades.length;
+        this.pageHeader.updateAverage(gradeAverage);
+      }
+    }
   }
   constructor(gradeTable, pageHeader) {
     this.handleGetGradesError = this.handleGetGradesError.bind(this)
