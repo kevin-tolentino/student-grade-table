@@ -1,6 +1,7 @@
 class GradeTable{
-  constructor(tableElement){
+  constructor(tableElement, noGradesElement){
     this.tableElement = tableElement;
+    this.noGradesElement = noGradesElement;
 
   }
   updateGrades(grades){
@@ -8,6 +9,7 @@ class GradeTable{
     var tBody = this.tableElement.querySelector("tbody");
     tBody.innerHTML = "";
     for (var arrayCounter = 0; arrayCounter < grades.length; arrayCounter++) {
+      this.renderGradeRow(grades[arrayCounter], this.deleteGrade)
       tBody.appendChild(tableRow)
     }
   }
@@ -34,6 +36,6 @@ class GradeTable{
       tableRow.appendChild(tableData2)
       tableRow.appendChild(tableData3)
       tableRow.appendChild(tableData4)
-      return tableRow
+      return tableRow;
   }
 }
