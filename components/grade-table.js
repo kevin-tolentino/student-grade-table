@@ -12,7 +12,7 @@ class GradeTable{
       var tableRow = this.renderGradeRow(grades[arrayCounter], this.deleteGrade)
       tBody.appendChild(tableRow)
     }
-    if (grades === {}){
+    if (grades.length === 0){
       this.noGradesElement.classList.remove("d-none")
     } else {this.noGradesElement.className = "d-none"}
   }
