@@ -18,10 +18,10 @@ class App{
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this)
     this.createGrade = this.createGrade.bind(this)
     this.handleCreateGradesError = this.handleCreateGradesError.bind(this)
-    this.handleCreateGradesSucess = this.handleCreateGradesSucess.bind(this)
+    this.handleCreateGradesSuccess = this.handleCreateGradesSuccess.bind(this)
     this.deleteGrade = this.deleteGrade.bind(this)
-    this.handleDeleteGradeError = this.handleDeleteGradeError.bind(this)
-    this.handleDeleteGradeSuccess = this.handleDeleteGradeSuccess.bind(this)
+    this.handleDeleteGradesError = this.handleDeleteGradesError.bind(this)
+    this.handleDeleteGradesSuccess = this.handleDeleteGradesSuccess.bind(this)
     this.gradeTable = gradeTable
     this.pageHeader = pageHeader;
     this.gradeForm = gradeForm
@@ -58,7 +58,7 @@ class App{
   handleCreateGradesError(error){
     console.error(error)
   }
-  handleCreateGradesSucess(){
+  handleCreateGradesSuccess(){
     this.getGrades()
   }
   deleteGrade(id){
@@ -71,10 +71,10 @@ class App{
       error: this.handleDeleteGradesError
     })
   }
-  handleDeleteGradeError(error){
+  handleDeleteGradesError(error){
     console.error(error)
   }
-  handleDeleteGradeSuccess(){
+  handleDeleteGradesSuccess(){
     this.getGrades()
   }
 }
